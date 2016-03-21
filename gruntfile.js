@@ -65,8 +65,8 @@ module.exports = function(grunt) {
 			options: {
 				sourceMap: true,
 				sourceMapName: 'build/sourcemap.map',
-				banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
-					'<%= grunt.template.today("yyyy-mm-dd") %> */',
+				banner: '/*! \n**  <%= pkg.name %> - v<%= pkg.version %> - ' +
+					'<%= grunt.template.today("yyyy-mm-dd") %> \n*/',
 				//beautify: true, //是否有格式
 				beautify: {
 					width: 80,
