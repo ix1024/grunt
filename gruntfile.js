@@ -81,9 +81,15 @@ module.exports = function(grunt) {
 				}
 			},
 			my_target: {
-				files: {
-					'build/output.min.js': ['src/*.js']
-				}
+				// files: {
+				// 	'build/output.min.js': ['src/*.js']
+				// }
+				files: [{
+					expand: true,
+					cwd: 'src/',
+					src: '**/*.js',
+					dest: 'build'
+				}]
 			}
 		}
 
@@ -103,5 +109,5 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 
 	// 默认被执行的任务列表。
-	grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
+	grunt.registerTask('default', ['jshint', 'uglify']);
 };
