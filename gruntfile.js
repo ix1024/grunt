@@ -20,7 +20,8 @@ module.exports = function(grunt) {
 			},
 			scripts: {
 				files: ['src/*.js'],
-				tasks: ['jshint'],
+				//tasks: ['jshint'],
+				//tasks: ['jsdoc'],
 				options: {
 					spawn: false,
 				},
@@ -91,6 +92,14 @@ module.exports = function(grunt) {
 					dest: 'build'
 				}]
 			}
+		},
+		jsdoc: {
+			dist: {
+				src: ['src/*.js', 'test/*.js'],
+				options: {
+					destination: 'doc'
+				}
+			}
 		}
 
 	});
@@ -107,6 +116,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	//压缩
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+
+	grunt.loadNpmTasks('grunt-jsdoc');
 
 	// 默认被执行的任务列表。
 	grunt.registerTask('default', ['jshint', 'uglify']);
